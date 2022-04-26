@@ -1,0 +1,229 @@
+/* COLORS ----------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* GLOBAL STYLES ----------------------------------------------------------------------------------------------------------------------------------------------*/
+body {
+  margin: 0;
+  padding: 10px;
+  font-family: "Montserrat";
+  background-color: #abb7b7;
+  min-width: 452px;
+  -webkit-transition: background-color 600ms ease-out !important;
+  transition: background-color 600ms ease-out !important;
+  max-width: 454px;
+  margin: auto;
+}
+#input-el {
+  width: 100%;
+  /* 100% + 10px + 10px - This is what is realling happening, and we dont want it. WE dont want the input larger than the body, so to resolve that we will have a box */
+  padding: 15px 15px;
+  box-sizing: border-box;
+  /* 100% - Now it is 100% for real, taking in account the padding*/
+  border: 1px solid #6c7a89;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  background-color: #e8e8e8;
+  text-align: center;
+}
+#input-el:focus {
+  outline: none;
+  border: 2px solid #6c7a89;
+}
+button {
+  background-color: #e8e8e8;
+  background-color: #6c7a89;
+  color: white;
+  padding: 10px 20px;
+  border: 1px solid #6c7a89;
+  border-radius: 20px;
+  transition: all 0.15s ease-in-out;
+  margin-bottom: 10px;
+  font-family: "Montserrat";
+  margin-right: 10px;
+}
+button:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 12px rgba(0, 0, 0, 0.05);
+}
+/* MAIN CONTAINER ---------------------------------------------------------------------------------------------------------------------------------------*/
+/* STYLE THE LIST ACCORDING TO THE DESIGN */
+ul {
+  margin-top: 20px;
+  list-style: none;
+  padding-left: 0;
+}
+li {
+  margin-top: 5px;
+}
+a {
+  color: #545150;
+  color: #e8e8e8;
+  padding-left: 5px;
+  transition: all 0.15s ease-in-out;
+  font-size: 15px;
+}
+a:hover {
+  font-size: 17px;
+}
+#delete-btn {
+  background-color: #e8e8e8;
+  color: #6c7a89;
+}
+span {
+  color: #6c7a89;
+  padding-left: 10px;
+}
+.toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.check {
+  position: absolute;
+  display: block;
+  width: 60px;
+  height: 30px;
+  background-color: #6c7a89;
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  margin-bottom: 15px;
+  box-shadow: 0 0 0 3px #e8e8e8;
+  /* BACKGROUNG OF THE TOGGLE BUTTON*/
+  /* TO BE ROUND INSTEAD OF SQUARE */
+}
+.check:before {
+  content: "";
+  position: absolute;
+  height: 23px;
+  width: 23px;
+  background: #e8e8e8;
+  margin-top: 3.5px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.check.round {
+  border-radius: 34px;
+}
+.check.round:before {
+  border-radius: 50%;
+}
+input {
+  /* WHEN ACTIVE CHANGES THE BACKGROUND COLOR */
+}
+input:checked + .check {
+  background-color: #e8e8e8;
+  box-shadow: 0 0 0 3px #abb7b7;
+  /* WHEN ACTIVE MOVES TO THE RIGHT */
+}
+input:checked + .check:before {
+  background: #6c7a89;
+}
+input:checked + .check:before {
+  -webkit-transform: translateX(28px);
+  -ms-transform: translateX(28px);
+  transform: translateX(28px);
+}
+#delete-btn {
+  margin-right: 0px;
+}
+#sun {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  top: -7px;
+  right: 45px;
+  fill: #6c7a89;
+}
+#moon {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  left: 55px;
+  top: -7px;
+  fill: #abb7b7;
+  left: 42px;
+}
+#sun,
+#moon {
+  cursor: pointer;
+}
+/* -----
+SVG Icons - svgicons.sparkk.fr
+----- */
+.delete-icon {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  top: 2px;
+  right: -10px;
+}
+.delete-icon:hover {
+  cursor: pointer;
+}
+.delete-icon path,
+.delete-icon polygon,
+.delete-icon rect {
+  fill: #6c7a89;
+}
+.delete-icon path:hover,
+.delete-icon polygon:hover,
+.delete-icon rect:hover {
+  cursor: pointer;
+}
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: #000000;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+/* Modal Content/Box */
+.modal-content {
+  background-color: #e8e8e8;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 70vw;
+  border-radius: 20px;
+  font-family: "Montserrat";
+  transform: translateY(40vh);
+  max-width: 404px;
+}
+/* The Close Button */
+.close {
+  color: #95a5a6;
+  float: right;
+  font-size: 23px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: #6c7a89;
+  text-decoration: none;
+  cursor: pointer;
+}
+.color {
+  color: #95a5a6;
+  font-size: 15px;
+  padding-left: 1px;
+  padding-right: 1px;
+  margin: 0px;
+}
+.button-con {
+  margin-top: 40px;
+}

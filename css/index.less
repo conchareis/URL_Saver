@@ -1,0 +1,281 @@
+/* COLORS ----------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+@background-green: rgb(171, 183, 183);
+@other-green: rgb(149, 165, 166);
+@pampas-cream: rgb(232, 232, 232);
+@cool-cream: #F0EBE7;
+@blue: rgb(108, 122, 137);
+@blue-focus: #67809f;
+
+/* GLOBAL STYLES ----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+body {
+    margin: 0;
+    padding: 10px;
+    font-family: "Montserrat";
+    background-color: @background-green;
+    min-width: 452px;
+    -webkit-transition: background-color 600ms ease-out !important;
+    transition: background-color 600ms ease-out !important;
+    max-width: 454px;
+    margin: auto;
+}
+
+#input-el{
+    width: 100%; /* 100% + 10px + 10px - This is what is realling happening, and we dont want it. WE dont want the input larger than the body, so to resolve that we will have a box */
+    padding: 15px 15px;
+    box-sizing: border-box; /* 100% - Now it is 100% for real, taking in account the padding*/
+    border: 1px solid @blue;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    background-color: @pampas-cream;
+    text-align: center;
+
+    &:focus {
+        outline: none;
+        border: 2px solid @blue;
+    }
+}
+
+button {
+    background-color: @pampas-cream;
+    background-color: @blue;
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid @blue;
+    border-radius: 20px;
+    transition: all 0.15s ease-in-out;
+    margin-bottom: 10px;
+    font-family: "Montserrat";
+    margin-right: 10px;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.01);
+        box-shadow:0 0 5px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 12px rgba(0, 0, 0, 0.05);
+    }
+}
+
+/* MAIN CONTAINER ---------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* STYLE THE LIST ACCORDING TO THE DESIGN */
+ul {
+    margin-top: 20px;
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    margin-top: 5px;
+}
+
+a {
+    // text-decoration: none;
+    color: #545150;
+    color: @pampas-cream;
+    padding-left: 5px;
+    transition: all 0.15s ease-in-out;
+    font-size: 15px;
+
+    &:hover {
+        font-size: 17px;
+    }
+}
+
+#delete-btn {
+    background-color: @pampas-cream;
+    color: @blue;
+}
+
+span {
+    color: @blue;
+    padding-left: 10px;
+}
+
+
+
+
+
+
+.toggle {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.check {
+    position: absolute;
+    display:block;
+    width: 60px;
+    height: 30px;
+    background-color: @blue;
+    cursor: pointer;
+	-webkit-transition: .4s;
+	transition: .4s;
+    margin-bottom: 15px; 
+    box-shadow: 0 0 0 3px @pampas-cream;
+
+    /* BACKGROUNG OF THE TOGGLE BUTTON*/
+    &:before {
+        content: "";
+        position: absolute;
+        height: 23px;
+        width: 23px;
+        background:@pampas-cream;
+        margin-top: 3.5px;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    	 /* TO BE ROUND INSTEAD OF SQUARE */
+	&.round {
+		border-radius: 34px;
+	
+		&:before {
+			border-radius: 50%;
+		}
+	}
+}
+
+
+input {
+	/* WHEN ACTIVE CHANGES THE BACKGROUND COLOR */
+	&:checked + .check {
+		background-color: @pampas-cream;
+        box-shadow: 0 0 0 3px @background-green;
+
+        &:before {
+            background:@blue;
+        }
+
+		/* WHEN ACTIVE MOVES TO THE RIGHT */
+		&:before {
+			-webkit-transform: translateX(28px);
+			-ms-transform: translateX(28px);
+			transform: translateX(28px);
+		}
+	}
+
+	// &:focus + .check {
+	// 	box-shadow: 0 0 0 3px @background-green;
+	// }
+}
+
+
+
+#delete-btn {
+    margin-right: 0px;
+}
+
+
+#sun {
+    position: relative;
+    width: 26px;
+    height: 26px;
+    top: -7px;
+    right: 45px;
+    fill: @blue;
+}
+
+#moon {
+    position: relative;
+    width: 26px;
+    height: 26px;
+    left: 55px;
+    top: -7px;
+    fill: @background-green;
+    left: 42px;
+  }
+  
+  #sun, #moon {
+    cursor: pointer;
+  }
+
+
+
+/* -----
+SVG Icons - svgicons.sparkk.fr
+----- */
+
+.delete-icon {
+    position: relative;
+    width: 14px;
+    height: 14px;
+    top: 2px;
+    right: -10px;
+
+    &:hover {
+        cursor: pointer;
+        // fill: @pampas-cream;
+    }
+  }
+  
+  .delete-icon path,
+  .delete-icon polygon,
+  .delete-icon rect {
+    fill: @blue;
+
+    &:hover {
+        cursor: pointer;
+        // fill: @pampas-cream;
+    }
+  }
+  
+
+
+
+
+  /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #e8e8e8;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 70vw;
+    border-radius: 20px;
+    font-family: "Montserrat";
+    transform: translateY(40vh);
+    max-width: 404px;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: @other-green;
+    float: right;
+    font-size: 23px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: @blue;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .color {
+      color:@other-green;
+      font-size: 15px;
+      padding-left: 1px;
+      padding-right: 1px;
+      margin: 0px;
+  }
+
+  .button-con {
+    margin-top: 40px;
+  }
