@@ -4,7 +4,7 @@ var myLeads = [];
 
 // myLeads.push("www.epiclead.com") // it doesnt work because it is a string, push only works on arrays. that is why we used up there the JSON.parcel
 
-const inputEl = document.getElementById("input-el");
+const inputEl = document.querySelector("#input-el");
 const inputBtn = document.getElementById("input-btn");
 const ulEl = document.getElementById("ul-el");
 const deleteBtn = document.getElementById("delete-btn");
@@ -41,7 +41,7 @@ function render(leads) {
                     ${leads[i]}
                 </a>
                 <svg class="delete-icon" viewBox="0 0 20 20">
-                <path class="x-color" fill="none" d="M15.898,4.045c-0.271-0.272-0.713-0.272-0.986,0l-4.71,4.711L5.493,4.045c-0.272-0.272-0.714-0.272-0.986,0s-0.272,0.714,0,0.986l4.709,4.711l-4.71,4.711c-0.272,0.271-0.272,0.713,0,0.986c0.136,0.136,0.314,0.203,0.492,0.203c0.179,0,0.357-0.067,0.493-0.203l4.711-4.711l4.71,4.711c0.137,0.136,0.314,0.203,0.494,0.203c0.178,0,0.355-0.067,0.492-0.203c0.273-0.273,0.273-0.715,0-0.986l-4.711-4.711l4.711-4.711C16.172,4.759,16.172,4.317,15.898,4.045z"></path>
+                <path id="x-color" fill="none" d="M15.898,4.045c-0.271-0.272-0.713-0.272-0.986,0l-4.71,4.711L5.493,4.045c-0.272-0.272-0.714-0.272-0.986,0s-0.272,0.714,0,0.986l4.709,4.711l-4.71,4.711c-0.272,0.271-0.272,0.713,0,0.986c0.136,0.136,0.314,0.203,0.492,0.203c0.179,0,0.357-0.067,0.493-0.203l4.711-4.711l4.71,4.711c0.137,0.136,0.314,0.203,0.494,0.203c0.178,0,0.355-0.067,0.492-0.203c0.273-0.273,0.273-0.715,0-0.986l-4.711-4.711l4.711-4.711C16.172,4.759,16.172,4.317,15.898,4.045z"></path>
                 </svg>
              </li>
         `; //Template String
@@ -86,11 +86,6 @@ inputBtn.addEventListener("click", function () {
 
 const colorEl = document.getElementById("color-el");
 var spanEl = document.getElementsByClassName("span-el");
-const moonEl = document.getElementById("moon");
-const sunEl = document.getElementById("sun");
-const deleteIcon = document.getElementById("delete-icon");
-const xColor = document.getElementsByClassName("x-color");
-const inputFocus = document.querySelector("#input-el:focus");
 
 colorEl.onclick = function () {
   nightDay();
@@ -99,32 +94,21 @@ colorEl.onclick = function () {
 
 function nightDay() {
   if (colorEl.checked) {
+    document.querySelector("body").classList.add("night");
+
     document.body.style.backgroundColor = "rgb(108, 122, 137)";
-    inputBtn.style.backgroundColor = "rgb(232, 232, 232)";
-    inputBtn.style.color = "rgb(108, 122, 137)";
-    tabBTn.style.backgroundColor = "rgb(232, 232, 232)";
-    tabBTn.style.color = "rgb(108, 122, 137)";
-    deleteBtn.style.backgroundColor = "rgb(171, 183, 183)";
-    deleteBtn.style.color = "rgb(232, 232, 232)";
-    deleteBtn.style.borderColor = "rgb(232, 232, 232)";
-    moonEl.style.fill = "rgb(232, 232, 232)";
-    sunEl.style.fill = "rgb(108, 122, 137)";
-    inputEl.style.border = "2px solid rgb(171, 183, 183)";
-    inputFocus.style.outline = "none";
-    inputFocus.style.border = "3px solid rgb(171, 183, 183)";
+
+    // inputEl.addEventListener("focus", function () {
+    //   this.style.border = "2px solid rgb(171, 183, 183)";
+    // });
   } else {
+    document.querySelector("body").classList.remove("night");
+
     document.body.style.backgroundColor = "rgb(171, 183, 183)";
-    inputBtn.style.backgroundColor = "rgb(108, 122, 137)";
-    inputBtn.style.color = "rgb(232, 232, 232)";
-    tabBTn.style.backgroundColor = "rgb(108, 122, 137)";
-    tabBTn.style.color = "rgb(232, 232, 232)";
-    deleteBtn.style.backgroundColor = "rgb(232, 232, 232)";
-    deleteBtn.style.color = "rgb(108, 122, 137)";
-    deleteBtn.style.borderColor = "rgb(108, 122, 137)";
-    moonEl.style.fill = "rgb(171, 183, 183)";
-    sunEl.style.fill = "rgb(108, 122, 137)";
-    inputEl.style.border = "1px solid rgb(108, 122, 137)";
-    // inputEl.style.border = "1px solid rgb(108, 122, 137)";
+
+    // inputEl.addEventListener("focus", function () {
+    //   this.style.border = "2px solid rgb(108, 122, 137)";
+    // });
   }
 }
 
@@ -158,3 +142,8 @@ window.onclick = function (event) {
 };
 
 // localStorage.removeItem('image');
+
+// 5 - Get the Current Year -------------------------------------------------------------------------------------------------------------------------------------------------/
+
+// document.getElementById("year").innerHTML = new Date().getFullYear();
+year.innerHTML = new Date().getFullYear();

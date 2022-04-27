@@ -21,24 +21,7 @@ body {
     margin: auto;
 }
 
-#input-el{
-    width: 100%; /* 100% + 10px + 10px - This is what is realling happening, and we dont want it. WE dont want the input larger than the body, so to resolve that we will have a box */
-    padding: 15px 15px;
-    box-sizing: border-box; /* 100% - Now it is 100% for real, taking in account the padding*/
-    border: 1px solid @blue;
-    margin-bottom: 10px;
-    border-radius: 20px;
-    background-color: @pampas-cream;
-    text-align: center;
-
-    &:focus {
-        outline: none;
-        border: 2px solid @blue;
-    }
-}
-
 button {
-    background-color: @pampas-cream;
     background-color: @blue;
     color: white;
     padding: 10px 20px;
@@ -56,9 +39,6 @@ button {
     }
 }
 
-/* MAIN CONTAINER ---------------------------------------------------------------------------------------------------------------------------------------*/
-
-/* STYLE THE LIST ACCORDING TO THE DESIGN */
 ul {
     margin-top: 20px;
     list-style: none;
@@ -70,15 +50,63 @@ li {
 }
 
 a {
-    // text-decoration: none;
     color: #545150;
     color: @pampas-cream;
     padding-left: 5px;
     transition: all 0.15s ease-in-out;
     font-size: 15px;
+    word-wrap:break-word; 
 
     &:hover {
-        font-size: 17px;
+        font-size: 16px;
+    }
+}
+
+span {
+    color: @blue;
+    padding-left: 5px;
+}
+
+input {
+	/* WHEN ACTIVE CHANGES THE BACKGROUND COLOR */
+	&:checked + .check {
+		background-color: @pampas-cream;
+        box-shadow: 0 0 0 3px @background-green;
+
+        &:before {
+            background:@blue;
+        }
+
+		/* WHEN ACTIVE MOVES TO THE RIGHT */
+		&:before {
+			-webkit-transform: translateX(30px);
+			-ms-transform: translateX(30px);
+			transform: translateX(30px);
+		}
+	}
+
+	// &:focus + .check {
+	// 	box-shadow: 0 0 0 3px @background-green;
+	// }
+}
+
+/* MAIN CONTAINER ---------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* STYLE THE LIST ACCORDING TO THE DESIGN */
+
+#input-el{
+    width: 100%; /* 100% + 10px + 10px - This is what is realling happening, and we dont want it. WE dont want the input larger than the body, so to resolve that we will have a box */
+    padding: 15px 15px;
+    box-sizing: border-box; /* 100% - Now it is 100% for real, taking in account the padding*/
+    border: 1px solid @blue;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    background-color: @pampas-cream;
+    text-align: center;
+
+    &:focus {
+        outline: none;
+        border: 2px solid @blue;
     }
 }
 
@@ -87,15 +115,10 @@ a {
     color: @blue;
 }
 
-span {
-    color: @blue;
-    padding-left: 10px;
+#input-btn,
+#tab-btn {
+    border: 1px solid @pampas-cream;
 }
-
-
-
-
-
 
 .toggle {
     display:flex;
@@ -138,32 +161,6 @@ span {
 	}
 }
 
-
-input {
-	/* WHEN ACTIVE CHANGES THE BACKGROUND COLOR */
-	&:checked + .check {
-		background-color: @pampas-cream;
-        box-shadow: 0 0 0 3px @background-green;
-
-        &:before {
-            background:@blue;
-        }
-
-		/* WHEN ACTIVE MOVES TO THE RIGHT */
-		&:before {
-			-webkit-transform: translateX(28px);
-			-ms-transform: translateX(28px);
-			transform: translateX(28px);
-		}
-	}
-
-	// &:focus + .check {
-	// 	box-shadow: 0 0 0 3px @background-green;
-	// }
-}
-
-
-
 #delete-btn {
     margin-right: 0px;
 }
@@ -191,8 +188,6 @@ input {
   #sun, #moon {
     cursor: pointer;
   }
-
-
 
 /* -----
 SVG Icons - svgicons.sparkk.fr
@@ -222,10 +217,6 @@ SVG Icons - svgicons.sparkk.fr
     }
   }
   
-
-
-
-
   /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -279,3 +270,112 @@ SVG Icons - svgicons.sparkk.fr
   .button-con {
     margin-top: 40px;
   }
+
+  /* COPYRIGHT ---------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.copyright {
+    flex: 100%;
+    flex-wrap: wrap;
+    text-align: center;
+	font-size: 9px;
+	font-weight: 600;
+    color: @pampas-cream;
+	font-family: Montserrat;
+	letter-spacing: 4px;
+    padding-top: 20px;
+  }
+
+
+#terms {
+	&:hover {
+	  color: @pampas-cream;
+    //   color: black;
+	  cursor: pointer;
+	}
+  }
+
+  #concha, 
+  #year {
+	text-decoration: none;
+    color: @pampas-cream;
+    font-size: 9px;
+    padding-left: 0;
+
+	&:hover {
+		color: @blue;
+        // color: black;
+		cursor: pointer;
+	  } 
+  }
+
+  input, select, textarea{
+    color: @blue;
+}
+
+.night {
+
+    button {
+        margin-right: 7px;
+    }
+
+    #input-btn, 
+    #tab-btn {
+        background-color: @pampas-cream;
+        color: @blue;
+        border: 2px solid @background-green;
+    }
+
+    #delete-btn {
+    background-color: @background-green;
+    color: @pampas-cream;
+    border: 2px solid @pampas-cream;
+    }
+
+    #moon {
+    fill: @pampas-cream;
+    }
+
+    #sun {
+    fill: @blue;
+    }
+
+    #Concha,
+    #year {
+    color: @background-green;
+
+        &:hover {
+        color: @pampas-cream;
+        }
+    }
+
+    #terms {
+    color: @pampas-cream;
+
+    &:hover {
+        color: @background-green;
+        }
+    }
+
+    #delete-icon {
+        fill: @background-green;
+    }
+
+    #input-el {
+        border: 2px solid @background-green;
+
+        &:focus {
+            outline: none;
+            border: 3px solid @background-green;
+        }
+    }
+
+    #span-el {
+        color: @background-green;
+    }
+
+    #x-color {
+        fill: @background-green;
+    }
+}
+
+

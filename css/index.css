@@ -11,6 +11,63 @@ body {
   max-width: 454px;
   margin: auto;
 }
+button {
+  background-color: #6c7a89;
+  color: white;
+  padding: 10px 20px;
+  border: 1px solid #6c7a89;
+  border-radius: 20px;
+  transition: all 0.15s ease-in-out;
+  margin-bottom: 10px;
+  font-family: "Montserrat";
+  margin-right: 10px;
+}
+button:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 12px rgba(0, 0, 0, 0.05);
+}
+ul {
+  margin-top: 20px;
+  list-style: none;
+  padding-left: 0;
+}
+li {
+  margin-top: 5px;
+}
+a {
+  color: #545150;
+  color: #e8e8e8;
+  padding-left: 5px;
+  transition: all 0.15s ease-in-out;
+  font-size: 15px;
+  word-wrap: break-word;
+}
+a:hover {
+  font-size: 16px;
+}
+span {
+  color: #6c7a89;
+  padding-left: 5px;
+}
+input {
+  /* WHEN ACTIVE CHANGES THE BACKGROUND COLOR */
+}
+input:checked + .check {
+  background-color: #e8e8e8;
+  box-shadow: 0 0 0 3px #abb7b7;
+  /* WHEN ACTIVE MOVES TO THE RIGHT */
+}
+input:checked + .check:before {
+  background: #6c7a89;
+}
+input:checked + .check:before {
+  -webkit-transform: translateX(30px);
+  -ms-transform: translateX(30px);
+  transform: translateX(30px);
+}
+/* MAIN CONTAINER ---------------------------------------------------------------------------------------------------------------------------------------*/
+/* STYLE THE LIST ACCORDING TO THE DESIGN */
 #input-el {
   width: 100%;
   /* 100% + 10px + 10px - This is what is realling happening, and we dont want it. WE dont want the input larger than the body, so to resolve that we will have a box */
@@ -27,50 +84,13 @@ body {
   outline: none;
   border: 2px solid #6c7a89;
 }
-button {
-  background-color: #e8e8e8;
-  background-color: #6c7a89;
-  color: white;
-  padding: 10px 20px;
-  border: 1px solid #6c7a89;
-  border-radius: 20px;
-  transition: all 0.15s ease-in-out;
-  margin-bottom: 10px;
-  font-family: "Montserrat";
-  margin-right: 10px;
-}
-button:hover {
-  cursor: pointer;
-  transform: scale(1.01);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 12px rgba(0, 0, 0, 0.05);
-}
-/* MAIN CONTAINER ---------------------------------------------------------------------------------------------------------------------------------------*/
-/* STYLE THE LIST ACCORDING TO THE DESIGN */
-ul {
-  margin-top: 20px;
-  list-style: none;
-  padding-left: 0;
-}
-li {
-  margin-top: 5px;
-}
-a {
-  color: #545150;
-  color: #e8e8e8;
-  padding-left: 5px;
-  transition: all 0.15s ease-in-out;
-  font-size: 15px;
-}
-a:hover {
-  font-size: 17px;
-}
 #delete-btn {
   background-color: #e8e8e8;
   color: #6c7a89;
 }
-span {
-  color: #6c7a89;
-  padding-left: 10px;
+#input-btn,
+#tab-btn {
+  border: 1px solid #e8e8e8;
 }
 .toggle {
   display: flex;
@@ -107,22 +127,6 @@ span {
 }
 .check.round:before {
   border-radius: 50%;
-}
-input {
-  /* WHEN ACTIVE CHANGES THE BACKGROUND COLOR */
-}
-input:checked + .check {
-  background-color: #e8e8e8;
-  box-shadow: 0 0 0 3px #abb7b7;
-  /* WHEN ACTIVE MOVES TO THE RIGHT */
-}
-input:checked + .check:before {
-  background: #6c7a89;
-}
-input:checked + .check:before {
-  -webkit-transform: translateX(28px);
-  -ms-transform: translateX(28px);
-  transform: translateX(28px);
 }
 #delete-btn {
   margin-right: 0px;
@@ -226,4 +230,87 @@ SVG Icons - svgicons.sparkk.fr
 }
 .button-con {
   margin-top: 40px;
+}
+/* COPYRIGHT ---------------------------------------------------------------------------------------------------------------------------------------------------*/
+.copyright {
+  flex: 100%;
+  flex-wrap: wrap;
+  text-align: center;
+  font-size: 9px;
+  font-weight: 600;
+  color: #e8e8e8;
+  font-family: Montserrat;
+  letter-spacing: 4px;
+  padding-top: 20px;
+}
+#terms:hover {
+  color: #e8e8e8;
+  cursor: pointer;
+}
+#concha,
+#year {
+  text-decoration: none;
+  color: #e8e8e8;
+  font-size: 9px;
+  padding-left: 0;
+}
+#concha:hover,
+#year:hover {
+  color: #6c7a89;
+  cursor: pointer;
+}
+input,
+select,
+textarea {
+  color: #6c7a89;
+}
+.night button {
+  margin-right: 7px;
+}
+.night #input-btn,
+.night #tab-btn {
+  background-color: #e8e8e8;
+  color: #6c7a89;
+  border: 2px solid #abb7b7;
+}
+.night #delete-btn {
+  background-color: #abb7b7;
+  color: #e8e8e8;
+  border: 2px solid #e8e8e8;
+}
+.night #moon {
+  fill: #e8e8e8;
+}
+.night #sun {
+  fill: #6c7a89;
+}
+.night #Concha,
+.night #year {
+  color: #abb7b7;
+}
+.night #Concha:hover,
+.night #year:hover {
+  color: #e8e8e8;
+}
+.night #terms {
+  color: #e8e8e8;
+}
+.night #terms:hover {
+  color: #abb7b7;
+}
+.night #delete-icon {
+  fill: #abb7b7;
+}
+.night #input-el {
+  border: 2px solid #abb7b7;
+}
+.night #input-el:focus {
+  outline: none;
+  border: 3px solid #abb7b7;
+}
+.night #span-el {
+  color: #abb7b7;
+}
+.night #x-color {
+  fill: #abb7b7;
 }
