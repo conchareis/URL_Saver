@@ -3,236 +3,238 @@
 @background-green: rgb(171, 183, 183);
 @other-green: rgb(149, 165, 166);
 @pampas-cream: rgb(232, 232, 232);
-@cool-cream: #F0EBE7;
+@cool-cream: #f0ebe7;
 @blue: rgb(108, 122, 137);
 @blue-focus: #67809f;
 
 /* GLOBAL STYLES ----------------------------------------------------------------------------------------------------------------------------------------------*/
 
 body {
-    margin: 0;
-    padding: 10px;
-    font-family: "Montserrat";
-    background-color: @background-green;
-    min-width: 452px;
-    -webkit-transition: background-color 600ms ease-out !important;
-    transition: background-color 600ms ease-out !important;
-    max-width: 454px;
-    margin: auto;
+  margin: 0;
+  padding: 10px;
+  font-family: "Montserrat";
+  background-color: @background-green;
+  min-width: 452px;
+  -webkit-transition: background-color 600ms ease-out !important;
+  transition: background-color 600ms ease-out !important;
+  max-width: 454px;
+  margin: auto;
 }
 
 button {
-    background-color: @blue;
-    color: white;
-    padding: 10px 20px;
-    border: 1px solid @blue;
-    border-radius: 20px;
-    transition: all 0.15s ease-in-out;
-    margin-bottom: 10px;
-    font-family: "Montserrat";
-    margin-right: 10px;
+  background-color: @blue;
+  color: white;
+  padding: 10px 20px;
+  border: 2px solid @blue;
+  border-radius: 20px;
+  transition: all 0.15s ease-in-out;
+  margin-bottom: 10px;
+  font-family: "Montserrat";
+  margin-right: 7px;
+  //   margin-right: 10px;
 
-    &:hover {
-        cursor: pointer;
-        transform: scale(1.01);
-        box-shadow:0 0 5px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 12px rgba(0, 0, 0, 0.05);
-    }
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1),
+      0 8px 12px rgba(0, 0, 0, 0.05);
+  }
 }
 
 ul {
-    margin-top: 20px;
-    list-style: none;
-    padding-left: 0;
+  margin-top: 20px;
+  list-style: none;
+  padding-left: 0;
 }
 
 li {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 
 a {
-    color: #545150;
-    color: @pampas-cream;
-    padding-left: 5px;
-    transition: all 0.15s ease-in-out;
-    font-size: 15px;
-    word-wrap:break-word; 
+  color: #545150;
+  color: @pampas-cream;
+  padding-left: 5px;
+  transition: all 0.15s ease-in-out;
+  font-size: 15px;
+  word-wrap: break-word;
 
-    &:hover {
-        font-size: 16px;
-    }
+  &:hover {
+    font-size: 16px;
+  }
 }
 
 span {
-    color: @blue;
-    padding-left: 5px;
+  color: @blue;
+  padding-left: 5px;
 }
 
 input {
-	/* WHEN ACTIVE CHANGES THE BACKGROUND COLOR */
-	&:checked + .check {
-		background-color: @pampas-cream;
-        box-shadow: 0 0 0 3px @background-green;
-
-        &:before {
-            background:@blue;
-        }
-
-		/* WHEN ACTIVE MOVES TO THE RIGHT */
-		&:before {
-			-webkit-transform: translateX(30px);
-			-ms-transform: translateX(30px);
-			transform: translateX(30px);
-		}
-	}
-
-	// &:focus + .check {
-	// 	box-shadow: 0 0 0 3px @background-green;
-	// }
-}
-
-/* MAIN CONTAINER ---------------------------------------------------------------------------------------------------------------------------------------*/
-
-/* STYLE THE LIST ACCORDING TO THE DESIGN */
-
-#input-el{
-    width: 100%; /* 100% + 10px + 10px - This is what is realling happening, and we dont want it. WE dont want the input larger than the body, so to resolve that we will have a box */
-    padding: 15px 15px;
-    box-sizing: border-box; /* 100% - Now it is 100% for real, taking in account the padding*/
-    border: 1px solid @blue;
-    margin-bottom: 10px;
-    border-radius: 20px;
+  /* WHEN ACTIVE CHANGES THE BACKGROUND COLOR */
+  &:checked + .check {
     background-color: @pampas-cream;
-    text-align: center;
+    box-shadow: 0 0 0 3px @background-green;
 
-    &:focus {
-        outline: none;
-        border: 2px solid @blue;
+    &:before {
+      background: @blue;
     }
+
+    /* WHEN ACTIVE MOVES TO THE RIGHT */
+    &:before {
+      -webkit-transform: translateX(30px);
+      -ms-transform: translateX(30px);
+      transform: translateX(30px);
+    }
+  }
 }
 
-#delete-btn {
-    background-color: @pampas-cream;
-    color: @blue;
+input,
+select,
+textarea {
+  color: @blue;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* INPUT ---------------------------------------------------------------------------------------------------------------------------------------*/
+
+#input-el {
+  width: 100%; /* 100% + 10px + 10px - This is what is realling happening, and we dont want it. WE dont want the input larger than the body, so to resolve that we will have a box */
+  padding: 15px 15px;
+  box-sizing: border-box; /* 100% - Now it is 100% for real, taking in account the padding*/
+  border: 2px solid @blue;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  background-color: @pampas-cream;
+  text-align: center;
+
+  &:focus {
+    outline: none;
+    border: 2px solid @blue;
+  }
 }
 
 #input-btn,
 #tab-btn {
-    border: 1px solid @pampas-cream;
+  border: 2px solid @pampas-cream;
 }
 
+/* DELETE ALL BUTTON ---------------------------------------------------------------------------------------------------------------------------------------*/
+
+#delete-btn {
+  background-color: @pampas-cream;
+  color: @blue;
+  margin-right: 0px;
+}
+
+/* TOGGLE BUTTON - LIGHT/DARK MODE  ---------------------------------------------------------------------------------------------------------------------------------------*/
+
 .toggle {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
 }
 
 .check {
+  position: absolute;
+  display: block;
+  width: 60px;
+  height: 30px;
+  background-color: @blue;
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  margin-bottom: 15px;
+  box-shadow: 0 0 0 3px @pampas-cream;
+
+  /* BACKGROUNG OF THE TOGGLE BUTTON */
+  &:before {
+    content: "";
     position: absolute;
-    display:block;
-    width: 60px;
-    height: 30px;
-    background-color: @blue;
-    cursor: pointer;
-	-webkit-transition: .4s;
-	transition: .4s;
-    margin-bottom: 15px; 
-    box-shadow: 0 0 0 3px @pampas-cream;
+    height: 23px;
+    width: 23px;
+    background: @pampas-cream;
+    margin-top: 3.5px;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
 
-    /* BACKGROUNG OF THE TOGGLE BUTTON*/
+  /* TO BE ROUND INSTEAD OF SQUARE */
+  &.round {
+    border-radius: 34px;
+
     &:before {
-        content: "";
-        position: absolute;
-        height: 23px;
-        width: 23px;
-        background:@pampas-cream;
-        margin-top: 3.5px;
-        -webkit-transition: .4s;
-        transition: .4s;
+      border-radius: 50%;
     }
-
-    	 /* TO BE ROUND INSTEAD OF SQUARE */
-	&.round {
-		border-radius: 34px;
-	
-		&:before {
-			border-radius: 50%;
-		}
-	}
+  }
 }
-
-#delete-btn {
-    margin-right: 0px;
-}
-
 
 #sun {
-    position: relative;
-    width: 26px;
-    height: 26px;
-    top: -7px;
-    right: 45px;
-    fill: @blue;
+  position: relative;
+  width: 26px;
+  height: 26px;
+  top: -7px;
+  right: 45px;
+  fill: @blue;
 }
 
 #moon {
-    position: relative;
-    width: 26px;
-    height: 26px;
-    left: 55px;
-    top: -7px;
-    fill: @background-green;
-    left: 42px;
-  }
-  
-  #sun, #moon {
-    cursor: pointer;
-  }
+  position: relative;
+  width: 26px;
+  height: 26px;
+  left: 55px;
+  top: -7px;
+  fill: @background-green;
+  left: 42px;
+}
 
-/* -----
-SVG Icons - svgicons.sparkk.fr
------ */
+#sun,
+#moon {
+  cursor: pointer;
+}
+
+/* X ICON - To delete the choosen item   ---------------------------------------------------------------------------------------------------------------------------------------*/
 
 .delete-icon {
-    position: relative;
-    width: 14px;
-    height: 14px;
-    top: 2px;
-    right: -10px;
+  position: relative;
+  width: 14px;
+  height: 14px;
+  top: 2px;
+  right: -10px;
 
-    &:hover {
-        cursor: pointer;
-        // fill: @pampas-cream;
-    }
+  &:hover {
+    cursor: pointer;
   }
-  
-  .delete-icon path,
-  .delete-icon polygon,
-  .delete-icon rect {
-    fill: @blue;
+}
 
-    &:hover {
-        cursor: pointer;
-        // fill: @pampas-cream;
-    }
+.delete-icon path,
+.delete-icon polygon,
+.delete-icon rect {
+  fill: @blue;
+
+  &:hover {
+    cursor: pointer;
   }
-  
-  /* The Modal (background) */
+}
+
+/* MODAL  ---------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* MODAL (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content/Box */
-  .modal-content {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+
+  /* MODAL - Content/Box */
+  &-content {
     background-color: #e8e8e8;
     margin: auto;
     padding: 20px;
@@ -243,139 +245,135 @@ SVG Icons - svgicons.sparkk.fr
     transform: translateY(40vh);
     max-width: 404px;
   }
-  
-  /* The Close Button */
-  .close {
-    color: @other-green;
-    float: right;
-    font-size: 23px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+/* MODAL - Close Button */
+.close {
+  color: @other-green;
+  float: right;
+  font-size: 23px;
+  font-weight: bold;
+
+  &:hover,
+  &:focus {
     color: @blue;
     text-decoration: none;
     cursor: pointer;
   }
-
-  .color {
-      color:@other-green;
-      font-size: 15px;
-      padding-left: 1px;
-      padding-right: 1px;
-      margin: 0px;
-  }
-
-  .button-con {
-    margin-top: 40px;
-  }
-
-  /* COPYRIGHT ---------------------------------------------------------------------------------------------------------------------------------------------------*/
-
-.copyright {
-    flex: 100%;
-    flex-wrap: wrap;
-    text-align: center;
-	font-size: 9px;
-	font-weight: 600;
-    color: @pampas-cream;
-	font-family: Montserrat;
-	letter-spacing: 4px;
-    padding-top: 20px;
-  }
-
-
-#terms {
-	&:hover {
-	  color: @pampas-cream;
-    //   color: black;
-	  cursor: pointer;
-	}
-  }
-
-  #concha, 
-  #year {
-	text-decoration: none;
-    color: @pampas-cream;
-    font-size: 9px;
-    padding-left: 0;
-
-	&:hover {
-		color: @blue;
-        // color: black;
-		cursor: pointer;
-	  } 
-  }
-
-  input, select, textarea{
-    color: @blue;
 }
 
+.color {
+  color: @other-green;
+  font-size: 15px;
+  padding-left: 1px;
+  padding-right: 1px;
+  margin: 0px;
+}
+
+.button-con {
+  margin-top: 40px;
+}
+
+/* COPYRIGHT ---------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.copyright {
+  flex: 100%;
+  flex-wrap: wrap;
+  text-align: center;
+  font-size: 9px;
+  font-weight: 600;
+  color: @pampas-cream;
+  font-family: Montserrat;
+  letter-spacing: 4px;
+  padding-top: 20px;
+}
+
+#terms {
+  &:hover {
+    color: @pampas-cream;
+    //   color: black;
+    cursor: pointer;
+  }
+}
+
+#concha,
+#year {
+  text-decoration: none;
+  color: @pampas-cream;
+  font-size: 9px;
+  padding-left: 0;
+
+  &:hover {
+    color: @blue;
+    // color: black;
+    cursor: pointer;
+  }
+}
+
+/* DARK MODE COLORS SCHEME ---------------------------------------------------------------------------------------------------------------------------------------------------*/
 .night {
+  button {
+    margin-right: 7px;
+  }
 
-    button {
-        margin-right: 7px;
-    }
+  #input-btn,
+  #tab-btn {
+    background-color: @pampas-cream;
+    color: @blue;
+    border: 2px solid @background-green;
+  }
 
-    #input-btn, 
-    #tab-btn {
-        background-color: @pampas-cream;
-        color: @blue;
-        border: 2px solid @background-green;
-    }
-
-    #delete-btn {
+  #delete-btn {
     background-color: @background-green;
     color: @pampas-cream;
     border: 2px solid @pampas-cream;
-    }
+  }
 
-    #moon {
+  #moon {
     fill: @pampas-cream;
-    }
+  }
 
-    #sun {
+  #sun {
     fill: @blue;
-    }
+  }
 
-    #Concha,
-    #year {
+  #Concha,
+  #year {
     color: @background-green;
 
-        &:hover {
-        color: @pampas-cream;
-        }
+    &:hover {
+      color: @pampas-cream;
     }
+  }
 
-    #terms {
+  #terms {
     color: @pampas-cream;
 
     &:hover {
-        color: @background-green;
-        }
+      color: @background-green;
     }
+  }
 
-    #delete-icon {
-        fill: @background-green;
+  #delete-icon {
+    fill: @background-green;
+  }
+
+  #input-el {
+    border: 2px solid @background-green;
+
+    &:focus {
+      outline: none;
+      border: 3px solid @background-green;
     }
+  }
 
-    #input-el {
-        border: 2px solid @background-green;
+  #span-el {
+    color: @background-green;
+  }
 
-        &:focus {
-            outline: none;
-            border: 3px solid @background-green;
-        }
-    }
-
-    #span-el {
-        color: @background-green;
-    }
-
-    #x-color {
-        fill: @background-green;
-    }
+  #x-color {
+    fill: @background-green;
+  }
 }
 
-
+/*  THE END ---------------------------------------------------------------------------------------------------------------------------------------------------*/

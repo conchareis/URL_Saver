@@ -15,12 +15,12 @@ button {
   background-color: #6c7a89;
   color: white;
   padding: 10px 20px;
-  border: 1px solid #6c7a89;
+  border: 2px solid #6c7a89;
   border-radius: 20px;
   transition: all 0.15s ease-in-out;
   margin-bottom: 10px;
   font-family: "Montserrat";
-  margin-right: 10px;
+  margin-right: 7px;
 }
 button:hover {
   cursor: pointer;
@@ -66,15 +66,20 @@ input:checked + .check:before {
   -ms-transform: translateX(30px);
   transform: translateX(30px);
 }
-/* MAIN CONTAINER ---------------------------------------------------------------------------------------------------------------------------------------*/
-/* STYLE THE LIST ACCORDING TO THE DESIGN */
+input,
+select,
+textarea {
+  color: #6c7a89;
+}
+/* ---------------------------------------------------------------------------------------------------------------------------------------*/
+/* INPUT ---------------------------------------------------------------------------------------------------------------------------------------*/
 #input-el {
   width: 100%;
   /* 100% + 10px + 10px - This is what is realling happening, and we dont want it. WE dont want the input larger than the body, so to resolve that we will have a box */
   padding: 15px 15px;
   box-sizing: border-box;
   /* 100% - Now it is 100% for real, taking in account the padding*/
-  border: 1px solid #6c7a89;
+  border: 2px solid #6c7a89;
   margin-bottom: 10px;
   border-radius: 20px;
   background-color: #e8e8e8;
@@ -84,14 +89,17 @@ input:checked + .check:before {
   outline: none;
   border: 2px solid #6c7a89;
 }
+#input-btn,
+#tab-btn {
+  border: 2px solid #e8e8e8;
+}
+/* DELETE ALL BUTTON ---------------------------------------------------------------------------------------------------------------------------------------*/
 #delete-btn {
   background-color: #e8e8e8;
   color: #6c7a89;
+  margin-right: 0px;
 }
-#input-btn,
-#tab-btn {
-  border: 1px solid #e8e8e8;
-}
+/* TOGGLE BUTTON - LIGHT/DARK MODE  ---------------------------------------------------------------------------------------------------------------------------------------*/
 .toggle {
   display: flex;
   justify-content: center;
@@ -109,7 +117,7 @@ input:checked + .check:before {
   transition: 0.4s;
   margin-bottom: 15px;
   box-shadow: 0 0 0 3px #e8e8e8;
-  /* BACKGROUNG OF THE TOGGLE BUTTON*/
+  /* BACKGROUNG OF THE TOGGLE BUTTON */
   /* TO BE ROUND INSTEAD OF SQUARE */
 }
 .check:before {
@@ -127,9 +135,6 @@ input:checked + .check:before {
 }
 .check.round:before {
   border-radius: 50%;
-}
-#delete-btn {
-  margin-right: 0px;
 }
 #sun {
   position: relative;
@@ -152,9 +157,7 @@ input:checked + .check:before {
 #moon {
   cursor: pointer;
 }
-/* -----
-SVG Icons - svgicons.sparkk.fr
------ */
+/* X ICON - To delete the choosen item   ---------------------------------------------------------------------------------------------------------------------------------------*/
 .delete-icon {
   position: relative;
   width: 14px;
@@ -175,7 +178,8 @@ SVG Icons - svgicons.sparkk.fr
 .delete-icon rect:hover {
   cursor: pointer;
 }
-/* The Modal (background) */
+/* MODAL  ---------------------------------------------------------------------------------------------------------------------------------------*/
+/* MODAL (background) */
 .modal {
   display: none;
   /* Hidden by default */
@@ -195,8 +199,8 @@ SVG Icons - svgicons.sparkk.fr
   /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4);
   /* Black w/ opacity */
+  /* MODAL - Content/Box */
 }
-/* Modal Content/Box */
 .modal-content {
   background-color: #e8e8e8;
   margin: auto;
@@ -208,7 +212,7 @@ SVG Icons - svgicons.sparkk.fr
   transform: translateY(40vh);
   max-width: 404px;
 }
-/* The Close Button */
+/* MODAL - Close Button */
 .close {
   color: #95a5a6;
   float: right;
@@ -259,11 +263,7 @@ SVG Icons - svgicons.sparkk.fr
   color: #6c7a89;
   cursor: pointer;
 }
-input,
-select,
-textarea {
-  color: #6c7a89;
-}
+/* DARK MODE COLORS SCHEME ---------------------------------------------------------------------------------------------------------------------------------------------------*/
 .night button {
   margin-right: 7px;
 }
@@ -314,3 +314,4 @@ textarea {
 .night #x-color {
   fill: #abb7b7;
 }
+/*  THE END ---------------------------------------------------------------------------------------------------------------------------------------------------*/
